@@ -20,8 +20,8 @@
 			    </div>
             </form> <!-- search-wrap .end// -->
     </div> <!-- col.// -->
-     <i class="fas fa-bell fa-2x ml-5 mt-2" style="color:#545454" ></i>
-     <i class="fas fa-envelope fa-2x ml-5 mt-2" style="color:#545454"></i>
+     <i class="fas fa-bell fa-2x ml-5 mt-3" style="color:#545454" ></i>
+     <i class="fas fa-envelope fa-2x ml-5 mt-3" style="color:#545454"></i>
 	<div class="col-lg-3 col-sm-12">
 			<a href="#" class="widget-header float-md-right">
 				<div class="icontext">
