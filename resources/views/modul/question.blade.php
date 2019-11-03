@@ -6,6 +6,20 @@
         <div class="col">
             <div>
                 <h5>
+                    <img src="http://localhost:8000/asset/img/icon/television.svg" aria-hidden="true" height="30">
+                    Teknik Informatika UG
+                </h5>
+                <h6>
+                    <ul type="none">
+                        <li style="margin:-10px 0;">
+                            <img src="http://localhost:8000/asset/img/icon/college-graduation.svg" aria-hidden="true" height="30"> Rekayasa Komputasional
+                        </li>
+                    </ul>
+                </h6>
+            </div>
+        
+            <div class="mt-5">
+                <h5>
                     <img src="http://localhost:8000/asset/img/icon/television.svg" aria-hidden="true" height="50" width="50">
                     Channel Ku
                 </h5>
@@ -83,60 +97,23 @@
                     </div>
                 </h6>
             </div>
+
+            <a class="btn btn-primary" href="/home" role="button">Kembali</a>
         </div>
 
         <!-- Kumpulan Pertanyaan di Mata Kuliah -->
         <div class="col-6">
             <!-- Judul -->
                 <div class="row">
-                    <div class="col-8">
-                        <h3>
-                            <img src="http://localhost:8000/asset/img/icon/newspaper-report.svg" aria-hidden="true" height="50" width="50">
-                            Teknik Informatika UG
-                        </h3>
-                    </div>
-                    <div class="col-4">
-                        <div class="dropdown" style="text-align:right;">
-                            Urutkan Dari :
-                            <button class="btn btn-light btn-sm dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Jumlah Dilihat
-                            </button>
-                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <a class="dropdown-item" href="#">Paling Baru</a>
-                                <a class="dropdown-item" href="#">Jumlah Jawaban</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <a class="btn btn-primary btn-sm" href="#" role="button">UG</a>
-                <a class="btn btn-primary btn-sm" href="#" role="button">Teknik</a>
-                <a class="btn btn-primary btn-sm" href="#" role="button">Fakultas Teknologi Industri</a>
-                
-                <hr>
-            <!-- End Judul -->
-
-            <!-- Post1 -->
-                <div class="row">
-                    <div class="col">
-                        <div class="row" style="text-align:center;">
-                            <div class="col-6">
-                                <h3 style="text-align:center;">5</h3>
-                                Jawaban
-                            </div>
-                            <div class="col-6">
-                                <h3 style="text-align:center;">27</h3>
-                                Dilihat
-                            </div>
-                        </div>
+                    <div class="col align-items-center" style="text-align:center;">
+                        <h1>27</h1>
+                        <h4 style="font-weight:normal;">Dilihat</h4>
                     </div>
                     <div class="col-6">
                         <div class="row">
-                            <h5>
-                                <a href="/question/dvwa-gabisa-di-linux" style="font-weight:normal;">
-                                    DVWA gak bisa diinstall di linux
-                                </a>
-                            </h5>
+                            <h4>
+                                DVWA gak bisa diinstall di linux
+                            </h4>
                         </div>
                         <div class="row">
                                 <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">DVWA</a>&nbsp;
@@ -148,105 +125,138 @@
                         <div class="rowalign-items-start" style="text-align:right;">
                             <sup>Rabu, 03 Juli 2019</sup>
                         </div>
-                        <div class="row align-items-end" style="text-align:right;">
+                        <div class="rowalign-items-end" style="text-align:right;">
                             Ditanyakan Oleh : <br>
                             <a href="">Dheo Prasetyo</a>
                         </div>
                     </div>
                 </div>
-                
+                    
                 <hr>
-            <!-- End Post1 -->
+            <!-- End Judul -->
 
-
-            <!-- Post2 -->
+            <!-- Isi -->
                 <div class="row">
                     <div class="col">
-                        <div class="row" style="text-align:center;">
-                            <div class="col-6">
-                                <h3 style="text-align:center;">6</h3>
-                                Jawaban
-                            </div>
-                            <div class="col-6">
-                                <h3 style="text-align:center;">25</h3>
-                                Dilihat
-                            </div>
+                        <p style="text-align:justify;">
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                            Mollitia id sed possimus? Maxime ea dicta fugiat, aperiam illum voluptatum,
+                            totam commodi repellendus ducimus ipsam explicabo corrupti eos eaque? Minima,
+                            quaerat?
+                        </p>
+                        <img src="http://localhost:8000/asset/img/pictures/setup-page.png" aria-hidden="true" style="display: block;margin-left: auto;margin-right: auto;width: 100%;height: auto;">
+
+                    <p style="text-align:justify;">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                        Mollitia id sed possimus? Maxime ea dicta fugiat.
+                    </p>
+                    </div>
+                </div>
+                
+                <hr>
+            <!-- End Isi -->
+
+            <!-- Sorting -->
+            <div class="row">
+                <div class="col-3 justify-content-start" style="text-align:center;">                
+                    <h1>27</h1>
+                    <h4 style="font-weight:normal;">Dilihat</h4>
+                </div>
+                <div class="col">
+                    <div class="dropdown" style="text-align:right;">
+                        Urutkan Dari :<br>
+                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Jumlah Disukai
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Jumlah Balasan</a>
+                            <a class="dropdown-item" href="#">Paling Baru</a>
                         </div>
                     </div>
-                    <div class="col-6">
-                        <div class="row">
-                            <h5>
-                                <a href="" style="font-weight:normal;">
-                                    Cara ambil cookie dari XSS-Reflected
-                                </a>
-                            </h5>
-                        </div>
-                        <div class="row">
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">DVWA</a>&nbsp;
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">Ethical Hacking</a>&nbsp;
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">Linux</a>&nbsp;
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">SKK</a>&nbsp;
-                        </div>
-                    </div>
+                </div>
+            </div>
+                
+                <hr>
+            <!-- End Sorting -->
+            
+            <!-- Jawaban1 -->
+                <div class="row">
                     <div class="col">
-                        <div class="rowalign-items-start" style="text-align:right;">
-                            <sup>Kamis, 04 Juli 2019</sup>
+                        <div class="row">
+                            <div class="col">
+                                <p style="color:#25AE88;"><img src="http://localhost:8000/asset/img/icon/success.svg" width="20">
+                                    Jabawan Terbaik Oleh Penanya
+                                </p>
+                            </div>
+                            <div class="col">
+                                <p style="text-align:right;"><sup>Kamis, 04 Juli 2019<br>Pukul 00:16 WIB</sup></p>
+                            </div>
                         </div>
-                        <div class="row align-items-end" style="text-align:right;">
-                            Ditanyakan Oleh : <br>
-                            <a href="">Mochammad Fariz S</a>
+                        <div class="row">
+                            <div class="col">
+                                <p style="text-align:justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non architecto, dolorem doloribus rem esse minima eius saepe nisi repellendus iure dignissimos temporibus delectus at amet. Consectetur reiciendis odio rerum quam!</p>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <p>
+                                    <img src="http://localhost:8000/asset/img/icon/heart-invert-01.svg" width="40">
+                                    2 Suka&nbsp;
+                                    <img src="http://localhost:8000/asset/img/icon/add-comment-button-blue-01.svg" width="20">
+                                    0 Balasan
+                                </p>
+                            </div>
+                            <div class="col justify-content-end">
+                                <p style="text-align:right;">
+                                    Penjawab :<br>
+                                    <a href="">Rafif Favian</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <hr>
-            <!-- End Post2 -->
+            <!-- End Jawaban1 -->
 
 
-            <!-- Post3 -->
+            <!-- Jawaban2 -->
                 <div class="row">
                     <div class="col">
-                        <div class="row" style="text-align:center;">
-                            <div class="col-6">
-                                <h3 style="text-align:center;">4</h3>
-                                Jawaban
+                        <div class="row">
+                            <div class="col">
+                                
                             </div>
-                            <div class="col-6">
-                                <h3 style="text-align:center;">21</h3>
-                                Dilihat
+                            <div class="col">
+                                <p style="text-align:right;"><sup>Jumat, 05 Juli 2019<br>Pukul 10:06 WIB</sup></p>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-6">
                         <div class="row">
-                            <h5>
-                                <a href="" style="font-weight:normal;">
-                                    Perbedaan Enkripsi Sha12 dan MD5
-                                </a>
-                            </h5>
+                            <div class="col">
+                                <p style="text-align:justify;">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non architecto, dolorem doloribus rem esse minima eius saepe nisi repellendus iure dignissimos temporibus delectus at amet. Consectetur reiciendis odio rerum quam!</p>
+                            </div>
                         </div>
                         <div class="row">
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">DVWA</a>&nbsp;
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">Ethical Hacking</a>&nbsp;
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">Security</a>&nbsp;
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">SKK</a>&nbsp;
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">MD5</a>&nbsp;
-                                <a class="btn btn-primary btn-sm" style="margin:2px 0;" href="#" role="button">...</a>&nbsp;
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="rowalign-items-start" style="text-align:right;">
-                            <sup>Senin, 01 Juli 2019</sup>
-                        </div>
-                        <div class="row align-items-end" style="text-align:right;">
-                            Ditanyakan Oleh : <br>
-                            <a href="">M Guruh Ajinugroho</a>
+                            <div class="col">
+                                    <p>
+                                        <img src="http://localhost:8000/asset/img/icon/heart-invert-01.svg" width="40">
+                                        0 Suka&nbsp;
+                                        <img src="http://localhost:8000/asset/img/icon/add-comment-button-blue-01.svg" width="20">
+                                        0 Balasan
+                                    </p>
+                            </div>
+                            <div class="col">
+                                <p style="text-align:right;">
+                                    Penjawab :<br>
+                                    <a href="">Muhammad Guruh Ajinugroho</a>
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </div>
                 
                 <hr>
-            <!-- End Post3 -->
+            <!-- End Jawaban2 -->
         </div>
 
         <!-- Profil & Pertanyaan-->
