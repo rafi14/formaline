@@ -31,3 +31,7 @@ Route::get('/new-post',function(){
 Route::get('/create-channel',function(){
     return view('modul.create_channel');
 });
+
+Route::get('/create-matkul',function(){
+    return view('modul.create_matkul');
+});

@@ -71,27 +71,31 @@
                 </div> <!-- col.// -->
                 <hr>
                 <h6>
-                        <ul type="square">
-                                <li style="margin:10px 0;">
-                                    <a href="" style="font-size:larger;">Sistem Keamanan Komputer</a>
-                                </li>
-                                <li style="margin:10px 0; font-weight:normal;">
-                                    <a href="" style="font-size:larger;">Sistem Basis Data 2</a>
-                                </li>
-                                <li style="margin:10px 0; font-weight:normal;">
-                                    <a href="" style="font-size:larger;">Algoritma Pemrograman Parallel</a>
-                                </li>
-                            </ul>
+                    <ul type="square">
+                        <li style="margin:10px 0;">
+                            <a href="" style="font-size:larger;">Sistem Keamanan Komputer</a>
+                        </li>
+                        <li style="margin:10px 0; font-weight:normal;">
+                            <a href="" style="font-size:larger;">Sistem Basis Data 2</a>
+                        </li>
+                        <li style="margin:10px 0; font-weight:normal;">
+                            <a href="" style="font-size:larger;">Algoritma Pemrograman Parallel</a>
+                        </li>
+                    </ul>
+
+                    <div class="mt-3">
+                        <a href="/create-matkul">Kelola Mata Kuliah (Admin)</a>
+                    </div>
                     <div class="mt-3">
                         <ul class="pagination justify-content-end">
                             <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
+                                <a class="page-link" href="#" tabindex="-1">Previous</a>
                             </li>
                             <li class="page-item"><a class="page-link" href="#">1</a></li>
                             <li class="page-item"><a class="page-link" href="#">2</a></li>
                             <li class="page-item"><a class="page-link" href="#">3</a></li>
                             <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
+                                <a class="page-link" href="#">Next</a>
                             </li>
                         </ul>
                     </div>
