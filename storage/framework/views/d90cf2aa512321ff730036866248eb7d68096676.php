@@ -46,7 +46,7 @@
                         </li>
                     </ul>
                     <div class="mt-3">
-                        <a href="">+ Tambah Baru</a>
+                        <a href="/create-channel">+ Tambah Baru</a>
                     </div>
                 </h6>
             </div>
@@ -271,7 +271,7 @@
                     <li>Smester 7</li>
                 </ul>
                 <div style="text-align:right;">
-                    <a class="btn btn-primary" href="#" role="button">Ajukan Pertanyaan</a>
+                    <a class="btn btn-primary" href="/new-post" role="button">Ajukan Pertanyaan</a>
                 </div>
             </div>
             <div class="mt-5">

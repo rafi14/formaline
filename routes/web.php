@@ -27,3 +27,7 @@ Route::get('/question/dvwa-gabisa-di-linux', function () {
 Route::get('/new-post',function(){
     return view('modul.post');
 });
+
+Route::get('/create-channel',function(){
+    return view('modul.create_channel');
+});

@@ -32,7 +32,7 @@
                         </li>
                     </ul>
                     <div class="mt-3">
-                        <a href="">+ Tambah Baru</a>
+                        <a href="/create-channel">+ Tambah Baru</a>
                     </div>
                 </h6>
             </div>
