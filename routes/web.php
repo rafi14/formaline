@@ -23,3 +23,7 @@ Route::get('/home', function () {
 Route::get('/question/dvwa-gabisa-di-linux', function () {
     return view('modul.question');
 });
+
+Route::get('/new-post',function(){
+    return view('modul.post');
+});

@@ -164,14 +164,12 @@
                 </div>
                 <div class="col">
                     <div class="dropdown" style="text-align:right;">
-                        Urutkan Dari :<br>
-                        <button class="btn btn-light dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            Jumlah Disukai
-                        </button>
-                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                            <a class="dropdown-item" href="#">Jumlah Balasan</a>
-                            <a class="dropdown-item" href="#">Paling Baru</a>
-                        </div>
+                        <h6 style="font-weight:normal;">Urutkan Dari :</h6>
+                        <select class="form-control col-5" style="float:right;" id="exampleFormControlSelect1">
+                            <option selected>Jumlah Disukai</option>
+                            <option>Jumlah Balasan</option>
+                            <option>Paling Baru</option>
+                        </select>
                     </div>
                 </div>
             </div>
@@ -274,7 +272,7 @@
                     <li>Smester 7</li>
                 </ul>
                 <div style="text-align:right;">
-                    <a class="btn btn-primary" href="#" role="button">Ajukan Pertanyaan</a>
+                    <a class="btn btn-primary" href="/new-post" role="button">Ajukan Pertanyaan</a>
                 </div>
             </div>
             <div class="mt-5">
