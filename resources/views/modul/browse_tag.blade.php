@@ -243,12 +243,13 @@
 
         <!-- Profil & Pertanyaan-->
         <div class="col">
-            <div>
-                <h5>
-                    <img src="http://localhost:8000/asset/img/icon/graduate-student-avatar.svg" aria-hidden="true" height="50" width="50">
-                    Profil Ku<br>
-                    <a href="/profilku" style="font-size:smaller;font-weight:normal;">Klik untuk merubah</a>
-                </h5>
+            <div class="row" style="text-align:start;">
+                <div class="col-3">
+                        <img src="http://localhost:8000/asset/img/foto/guruhformal.jpg" aria-hidden="true" height="50" width="50" style="border-radius:50%;">
+                </div>
+                <div class="col">
+                    <a href="/profilku"><h5>M Guruh Ajinugroho</h5><div style="font-size:smaller;">Lihat Profil</div></a>
+                </div>
             </div>
             <div class="mt-5">
                 <h5>

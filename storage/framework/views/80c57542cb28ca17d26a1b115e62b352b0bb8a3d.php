@@ -1,42 +1,9 @@
 <?php $__env->startSection('content'); ?>
 <div class="container">
     <div class="row">
-        <!-- Channel & Mata Kuliah -->
+        <!-- Mata Kuliah -->
         <div class="col">
-            <div>
-                <h5>
-                    <img src="http://localhost:8000/asset/img/icon/television.svg" aria-hidden="true" height="50" width="50">
-                    Channel Ku
-                </h5>
-                <div>
-                    <form action="#" class="search-wrap">
-                        <div class="input-group w-100">
-                            <input type="text" class="form-control" style="width:40%;" placeholder="Cari Channel">
-            
-                            <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
-                            </div>
-                        </div>
-                    </form> <!-- search-wrap .end// -->
-                </div> <!-- col.// -->
-                <hr>
-                <h6>
-                    <ul type="square">
-                        <li style="margin:10px 0;">
-                            <a href="" style="font-size:larger;">Rekayasa Komputasional</a>
-                        </li>
-                        <li style="margin:10px 0; font-weight:normal;">
-                            <a href="" style="font-size:larger;">Sistem Basis Data 2</a>
-                        </li>
-                    </ul>
-                    <div class="mt-3">
-                        <a href="/create-channel">+ Tambah Baru</a>
-                    </div>
-                </h6>
-            </div>
-            <div class="mt-5">
+            <div class="row">
                 <h5>
                     <img src="http://localhost:8000/asset/img/icon/college-graduation.svg" aria-hidden="true" height="50" width="50">
                     Mata Kuliah
@@ -44,7 +11,7 @@
                 <div>
                     <form action="#" class="search-wrap">
                         <div class="input-group w-100">
-                            <input type="text" class="form-control" style="width:40%;" placeholder="Cari Channel">
+                            <input type="text" class="form-control" style="width:40%;" placeholder="Cari Pertanyaan by Mata Kuliah">
             
                             <div class="input-group-append">
                             <button class="btn btn-primary" type="submit">
@@ -84,6 +51,36 @@
                         </ul>
                     </div>
                 </h6>
+            </div>
+            <div class="row mt-5">
+                <h5>
+                    <img src="http://localhost:8000/asset/img/icon/hastag.svg" aria-hidden="true" height="50" width="50">
+                    Tag Popular
+                </h5>
+                <div>
+                    <form action="#" class="search-wrap">
+                        <div class="input-group w-100">
+                            <input type="text" class="form-control" style="width:40%;" placeholder="Cari Tag">
+            
+                            <div class="input-group-append">
+                            <button class="btn btn-primary" type="submit">
+                                <i class="fa fa-search"></i>
+                            </button>
+                            </div>
+                        </div>
+                    </form> <!-- search-wrap .end// -->
+                </div> <!-- col.// -->
+                <hr>
+                
+                <div class="row mt-2">
+                    <div class="col-md-12">
+                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >UG</span>
+                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >Teknik</span>
+                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >Fakultas Teknologi Industri</span>
+                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >HTML</span>
+                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >Pengantar Web</span>
+                    </div>
+                </div>
             </div>
         </div>
 
@@ -251,21 +248,12 @@
 
         <!-- Profil & Pertanyaan-->
         <div class="col">
-            <div>
-                <h5>
-                    <img src="http://localhost:8000/asset/img/icon/graduate-student-avatar.svg" aria-hidden="true" height="50" width="50">
-                    Profil Ku<br>
-                    <a href="/profilku" style="font-size:smaller;font-weight:normal;">Klik untuk merubah</a>
-                </h5>
-                <hr>
-                <ul type="square">
-                    <li>Muhammad Guruh Ajinugroho</li>
-                    <li>S1 - Jurusan Teknik Informatika Fakultas Teknologi Industri Universitas Gunadarma</li>
-                    <li>Smester 7</li>
-                </ul>
-
-                <div style="text-align:right;">
-                    <a class="btn btn-primary" href="/new-post" role="button">Ajukan Pertanyaan</a>
+            <div class="row" style="text-align:start;">
+                <div class="col-3">
+                        <img src="http://localhost:8000/asset/img/foto/guruhformal.jpg" aria-hidden="true" height="50" width="50" style="border-radius:50%;">
+                </div>
+                <div class="col">
+                    <a href="/profilku"><h5>M Guruh Ajinugroho</h5><div style="font-size:smaller;">Lihat Profil</div></a>
                 </div>
             </div>
             <div class="mt-5">
@@ -306,6 +294,9 @@
                         </ul>
                     </div>
                 </h6>
+            </div>
+            <div style="text-align:right;">
+                <a class="btn btn-primary" href="/new-post" role="button">Ajukan Pertanyaan</a>
             </div>
         </div>
     </div>
