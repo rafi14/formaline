@@ -255,8 +255,8 @@
             <div>
                 <h5>
                     <img src="http://localhost:8000/asset/img/icon/graduate-student-avatar.svg" aria-hidden="true" height="50" width="50">
-                    Profilku<br>
-                    <a href="" style="font-size:smaller;font-weight:normal;">Klik untuk merubah</a>
+                    Profil Ku<br>
+                    <a href="/profilku" style="font-size:smaller;font-weight:normal;">Klik untuk merubah</a>
                 </h5>
                 <hr>
                 <ul type="square">
@@ -264,6 +264,7 @@
                     <li>S1 - Jurusan Teknik Informatika Fakultas Teknologi Industri Universitas Gunadarma</li>
                     <li>Smester 7</li>
                 </ul>
+
                 <div style="text-align:right;">
                     <a class="btn btn-primary" href="/new-post" role="button">Ajukan Pertanyaan</a>
                 </div>

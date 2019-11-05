@@ -3,7 +3,7 @@
 		<div class="row align-items-center">
 			<div class="col-lg-3 col-sm-4">
 				<div class="brand-wrap">
-					<img  class="logo" src="/asset/img/logo/banner.png" height="40">
+					<img  class="logo" src="http://localhost:8000/asset/img/logo/banner.png" height="40">
 				</div> <!-- brand-wrap.// -->
 			</div>
 			<div class="col-lg-6 col-sm-8">

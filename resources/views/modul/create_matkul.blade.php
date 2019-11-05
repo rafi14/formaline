@@ -25,27 +25,28 @@
                     <ul>
                         <li style="margin:20px 0;">
                             <a href="">Sistem Informasi Akuntansi</a><br>
-                            <small><a data-toggle="modal" href="#editMk1">Edit</a>&nbsp;<a href="">Delete</a></small>
-                        </li>
+                            <!--small><a data-toggle="modal" href="#editMk1">Edit</a>&nbsp;<a href=""></a></small-->
+                            <small><a href="/edit-matkul/sis-infor-akun">Edit</a>&nbsp;<a href=""></a></small>
+                    </li>
                         <li style="margin:20px 0;">
                             <a href="">Algoritma Pemrograman Parallel</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href="">Delete</a></small>
+                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
                         </li>
                         <li style="margin:20px 0;">
                             <a href="">Peng. Teknologi Game</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href="">Delete</a></small>
+                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
                         </li>
                         <li style="margin:20px 0;">
                             <a href="">Sistem Informasi Manajemen</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href="">Delete</a></small>
+                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
                         </li>
                         <li style="margin:20px 0;">
                             <a href="">Peng. Analisis Algoritma</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href="">Delete</a></small>
+                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
                         </li>
                         <li style="margin:20px 0;">
                             <a href="">Bahasa Inggris Bisnis 1</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href="">Delete</a></small>
+                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
                         </li>
                     </ul>
                 </h3>
@@ -70,7 +71,7 @@
         <div class="col"></div>
     </div>
 </div>
-<div class="modal fade" id="editMk1" tabindex="-1" role="dialog" aria-labelledby="editMk1Label" aria-hidden="true">
+<!--div class="modal fade" id="editMk1" tabindex="-1" role="dialog" aria-labelledby="editMk1Label" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
@@ -94,5 +95,5 @@
             </div>
         </div>
     </div>
-</div>
+</div-->
 @endsection

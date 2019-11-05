@@ -12,13 +12,12 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('dashboard');
 });
 
 Route::get('/home', function () {
     return view('modul.home');
 });
-
 
 Route::get('/question/dvwa-gabisa-di-linux', function () {
     return view('modul.question');
@@ -34,4 +33,16 @@ Route::get('/create-channel',function(){
 
 Route::get('/create-matkul',function(){
     return view('modul.create_matkul');
+});
+
+Route::get('/profilku', function () {
+    return view('modul.profilku');
+});
+
+Route::get('/login', function () {
+    return view('layouts.login');
+});
+
+Route::get('/register', function () {
+    return view('layouts.register');
 });

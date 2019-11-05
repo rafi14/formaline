@@ -39,7 +39,7 @@
   </body>
 
       <!-- awal footer -->
-    <footer class="mt-5" style="position: relative;
+    <!-- footer class="mt-5" style="position: relative;
     bottom: 0;
     width: 100%;
     height: 70px;
@@ -54,6 +54,6 @@ font-size: 1.4em;">copy right &copy 2019. | built by. <a href="https://www.insta
         </div>
        
       </div>
-    </footer>
+    </footer -->
     <!-- akhir footer -->
 </html>
