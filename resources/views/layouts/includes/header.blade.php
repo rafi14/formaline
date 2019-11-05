@@ -9,7 +9,7 @@
 			<div class="col-lg-6 col-sm-8">
 				<form action="#" class="search-wrap">
 					<div class="input-group w-100">
-						<input type="text" class="form-control" style="width:40%;" placeholder="Cari Channel">
+						<input type="text" class="form-control" style="width:40%;" placeholder="Cari Pertanyaan by Universitas">
 					
 						<div class="input-group-append">
 							<button class="btn btn-primary" type="submit">

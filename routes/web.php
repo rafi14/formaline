@@ -27,9 +27,14 @@ Route::get('/new-post',function(){
     return view('modul.post');
 });
 
+/*Route::get('/browse-channel',function(){
+    return view('modul.browse_channel');
+});
+
 Route::get('/create-channel',function(){
     return view('modul.create_channel');
 });
+*/
 
 Route::get('/create-matkul',function(){
     return view('modul.create_matkul');
@@ -45,4 +50,8 @@ Route::get('/login', function () {
 
 Route::get('/register', function () {
     return view('layouts.register');
+});
+
+Route::get('browse-tag',function(){
+    return view('modul.browse_tag');
 });
