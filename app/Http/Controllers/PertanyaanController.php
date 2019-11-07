@@ -17,6 +17,12 @@ class PertanyaanController extends Controller
      */
     public function index()
     {
+        if (Auth::check() === true) {
+            $id_user = Auth::user()->id;
+        } else {
+            return redirect()->route('login.index');
+        }
+        
         $id = Auth::user()->id;
         $matkul = Mymatkul::where('id_user',$id)->get();
         return view('modul.post',compact('matkul'));

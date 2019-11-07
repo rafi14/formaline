@@ -30,9 +30,10 @@ class QuestionController extends Controller
         
 
         $question = Mypertanyaan::where('pertanyaan.id_user', $id_user)
-            ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')
-            ->select('*', 'matkul.name as name_matkul')
-            ->get();
+        ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')
+        ->select('*', 'matkul.name as name_matkul','pertanyaan.id as id_pertanyaan')
+        ->orderBy('pertanyaan.created_at', 'desc')
+        ->paginate(3);
         $tag = Mypertanyaan::orderBy('created_at', 'desc')->limit(3)->get();
         $pertanyaan = Mypertanyaan::where('pertanyaan.id', $id)
             ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')
@@ -57,7 +58,11 @@ class QuestionController extends Controller
         $id = Auth::user()->id;
         $question = Mypertanyaan::where('tag', 'like', '%' . $input_popular_tag . '%')->paginate(6);
         $tag = Mypertanyaan::orderBy('created_at', 'desc')->limit(3)->get();
-        $pertanyaan = Mypertanyaan::where('id_user', $id)->paginate(1);
+       
+        $pertanyaan =Mypertanyaan::where('pertanyaan.id_user', $id)
+            ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')
+            ->select('*', 'matkul.name as name_matkul','pertanyaan.id as id_pertanyaan')
+            ->orderBy('pertanyaan.created_at', 'desc')->paginate(1);
         $matkul = Mymatkul::paginate(4);
         $isSearch = 1;
         return view('modul.home', compact('matkul', 'pertanyaan', 'question', 'tag', 'isSearch'));
@@ -86,9 +91,16 @@ class QuestionController extends Controller
 
         $input_popular_matkul = $request->text_search_matkul;
         $input_index_matkul = $request->index_matkul;
+        
         $id = Auth::user()->id;
-        $matkul = Mymatkul::where('name', 'like', '%' . $input_popular_matkul . '%')->paginate(4);
         $question = Mypertanyaan::where('id_matkul', '=', $input_index_matkul)->paginate(6);
+        $get_matkul_name = Mypertanyaan::where('pertanyaan.id', $input_index_matkul)
+        ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')
+        ->select('*', 'matkul.name as name_matkul','pertanyaan.id as id_pertanyaan')
+        ->orderBy('pertanyaan.created_at', 'desc')->first();
+        Session::put("input_matkul", $get_matkul_name->name);
+        $matkul = Mymatkul::where('name', 'like', '%' . $get_matkul_name->name . '%')->paginate(4);
+        
         $tag = Mypertanyaan::orderBy('created_at', 'desc')->limit(3)->get();
         $pertanyaan = Mypertanyaan::where('id_user', $id)->paginate(1);
 

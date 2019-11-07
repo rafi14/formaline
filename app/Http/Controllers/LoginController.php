@@ -26,7 +26,8 @@ class LoginController extends Controller
      */
     public function create()
     {
-        //
+        Auth::logout();
+        return redirect(route('login.index'));
     }
 
     /**

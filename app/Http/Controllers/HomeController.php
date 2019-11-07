@@ -19,16 +19,23 @@ class HomeController extends Controller
      */
     public function index(Request $request)
     {
+        if (Auth::check() === true) {
+            $id_user = Auth::user()->id;
+        } else {
+            return redirect()->route('login.index');
+        }
 
         $id = Auth::user()->id;
         $question = Mypertanyaan::all();
         $tag = Mypertanyaan::orderBy('created_at', 'desc')->limit(3)->get();
         $pertanyaan = Mypertanyaan::where('pertanyaan.id_user', $id)
             ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')
-            ->select('*', 'matkul.name as name_matkul')
+            ->select('*', 'matkul.name as name_matkul','pertanyaan.id as id_pertanyaan')
+            ->orderBy('pertanyaan.created_at', 'desc')
             ->paginate(1);
 
         $matkul = Mymatkul::paginate(4);
+        
         $isSearch = 0;
 
 
@@ -39,15 +46,27 @@ class HomeController extends Controller
 
     function index_search_tag(Request $request)
     {
+        if (Auth::check() === true) {
+            $id = Auth::user()->id;
+            $pertanyaan =  Mypertanyaan::where('pertanyaan.id_user', $id)
+            ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')
+            ->select('*', 'matkul.name as name_matkul','pertanyaan.id as id_pertanyaan')
+            ->orderBy('pertanyaan.created_at', 'desc')->paginate(1);
+            $id_user = Auth::user()->id;
+        } else {
+            $pertanyaan = null;
+        }
 
         $input_popular_tag = $request->text_search_tag;
 
 
 
-        $id = Auth::user()->id;
-        $question = Mypertanyaan::where('tag', 'like', '%' . $input_popular_tag . '%')->paginate(6);
+      
+        $question = Mypertanyaan::where('judul', 'like', '%' . $input_popular_tag . '%')
+        ->Orwhere('isi', 'like', '%' . $input_popular_tag . '%')
+        ->Orwhere('tag', 'like', '%' . $input_popular_tag . '%')
+        ->Orwhere('universitas', 'like', '%' . $input_popular_tag . '%')->paginate(4);
         $tag = Mypertanyaan::orderBy('created_at', 'desc')->limit(3)->get();
-        $pertanyaan = Mypertanyaan::where('id_user', $id)->paginate(1);
         $matkul = Mymatkul::paginate(4);
         $isSearch = 1;
         return view('modul.home', compact('matkul', 'pertanyaan', 'question', 'tag', 'isSearch'));
@@ -56,8 +75,14 @@ class HomeController extends Controller
 
     function index_search_matkul(Request $request)
     {
+        if (Auth::check() === true) {
+            $id_user = Auth::user()->id;
+        } else {
+            return redirect()->route('login.index');
+        }
+
         $input_popular_matkul = $request->text_search_matkul;
-        Session::put("input_matkul", $input_popular_matkul);
+        // Session::put("input_matkul", $input_popular_matkul);
         $id = Auth::user()->id;
 
         $matkul = Mymatkul::where('name', 'like', '%' . $input_popular_matkul . '%')->paginate(4);
@@ -74,13 +99,23 @@ class HomeController extends Controller
     function index_set_matkul(Request $request)
     {
 
+        if (Auth::check() === true) {
+            $id_user = Auth::user()->id;
+        } else {
+            return redirect()->route('login.index');
+        }
+
         $input_popular_matkul = $request->text_search_matkul;
+     
         $input_index_matkul = $request->index_matkul;
         $id = Auth::user()->id;
         $matkul = Mymatkul::where('name', 'like', '%' . $input_popular_matkul . '%')->paginate(4);
         $question = Mypertanyaan::where('id_matkul', '=', $input_index_matkul)->paginate(6);
         $tag = Mypertanyaan::orderBy('created_at', 'desc')->limit(3)->get();
-        $pertanyaan = Mypertanyaan::where('id_user', $id)->paginate(1);
+        $pertanyaan =Mypertanyaan::where('pertanyaan.id_user', $id)
+            ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')
+            ->select('*', 'matkul.name as name_matkul','pertanyaan.id as id_pertanyaan')
+            ->orderBy('pertanyaan.created_at', 'desc')->paginate(1);
 
         $isSearch = 1;
         return view('modul.home', compact('matkul', 'pertanyaan', 'question', 'tag', 'isSearch'));
@@ -115,6 +150,12 @@ class HomeController extends Controller
      */
     public function show($id)
     {
+        if (Auth::check() === true) {
+            $id_user = Auth::user()->id;
+        } else {
+            return redirect()->route('login.index');
+        }
+         
         $id = Auth::user()->id;
         $detail =  Mypertanyaan::where('pertanyaan.id', '=', $id)
             ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')

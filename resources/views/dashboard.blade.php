@@ -75,22 +75,26 @@
                         </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <form class="form-inline">
-                                        <div class="input-group w-100">
-                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Cari Tag" >
-                                        <div class="input-group-append"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button></div>
-                                        </div>
-                                </form>
+                            <form action="{{ route('search_by_tag_dashboard') }}" method="post" class="search-wrap">
+                                @csrf
+                                <div class="input-group w-100">
+                                    <input name="text_search_tag" type="text" class="form-control" style="width:40%;" placeholder="Cari Tag">
+
+                                    <div class="input-group-append">
+                                        <button class="btn btn-primary" type="submit">
+                                            <i class="fa fa-search"></i>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form> <!-- search-wrap .end// -->
                             </div>
                         </div>
                         {{-- <br> --}}
                         <div class="row">
                             <div class="col-md-12">
-                                    <span class="badge badge-primary">UG</span>
-                                    <span class="badge badge-primary">Teknik</span>
-                                    <span class="badge badge-primary">Fakultas Teknologi Industri</span>
-                                    <span class="badge badge-primary">HTML</span>
-                                    <span class="badge badge-primary">Pengantar Web</span>
+                            @foreach($tag as $tags)
+                                 <a href="{{ route('search_by_tag_get')}}?text_search_tag={{$tags->tag}}"><span class="btn btn-primary btn-sm" style="margin:2px 0;">{{$tags->tag}}</span></a>
+                            @endforeach
                             </div>
                         </div>
                         <br>
@@ -105,12 +109,12 @@
                         <input name="text_search_tag" type="text" class="form-control" style="width:40%;" placeholder="Cari Pertanyaan">
                     
                         <div class="input-group-append">
-                        <!--button class="btn btn-primary" type="submit">
+                        <button class="btn btn-primary" type="submit">
                             <i class="fa fa-search"></i>
-                        </button-->
-                            <a class="btn btn-primary" href="/question/dvwa-gabisa-di-linux">
+                        </button>
+                            <!-- <a class="btn btn-primary" href="/question/dvwa-gabisa-di-linux">
                                 <i class="fa fa-search"></i>
-                            </a>
+                            </a> -->
                         </div>
                     </div>
 
@@ -212,9 +216,10 @@
                             </div>
                         <div class="row">
                             <div class="col-md-12">
-                                <form class="form-inline">
+                                <form method="post" action="{{ route ('search_by_pertanyaan') }}" class="form-inline">
+                                    @csrf
                                         <div class="input-group w-100">
-                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Cari Tag" >
+                                        <input type="text" name="text_search_pertanyaan" class="form-control" id="inlineFormInputGroup" placeholder="Cari Pertanyaan" >
                                         <div class="input-group-append"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button></div>
                                         </div>
                                 </form>
@@ -224,13 +229,24 @@
                         <div class="row">
                             <div class="col-md-12">
                                     <ul class="" >
-                                            <li>Lorem Ipsum</li>
-                                            <p style="font-size :50%; text-align: right;margin-top: -20px;">(30 Jawaban )</p>
-                                            <p style="font-size :80%;margin-top: -10px; color:blue">Rekayasa Komputasional</p>
-                                            <li>Lorem Ipsum</li>
-                                            <p style="font-size :50%; text-align: right;margin-top: -20px;">(25 Jawaban )</p>
-                                            <p style="font-size :80%;margin-top: -10px; color:blue">Sistem Basis Data 2</p>
+                                    @foreach($pertanyaan as $pertanyaans)
+                                   
+                                        <li style="margin:10px 0; font-weight:normal;">
+                                            {{$pertanyaans->judul}} <sup>(3 Jawaban)</sup>
+                                            <br>
+                                            
+                                            <a href="{{route('search_by_view_pertanyaan',$pertanyaans->id_pertanyaan)}}" style="font-size:smaller;">{{$pertanyaans->name_matkul}}</a>
+                                        </li>
+                                    @endforeach
                                         </ul>
+                    <div class="mt-3">
+                        <ul class="pagination justify-content-end">
+                            {{$pertanyaan->links()}}
+                        </ul>
+                       @if($isSearch == true) 
+                            <a href="{{route('dashboard.index')}}">Kembali</a>
+                       @endif     
+                    </div>
                             </div>
                         </div>
             </div>            

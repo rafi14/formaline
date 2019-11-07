@@ -69,5 +69,14 @@ Route::get('/question/{id}','QuestionController@index')->name('question_index');
 Route::resource('/question','QuestionController');
 
 Route::resource('/dashboard','DashboardController');
+Route::get('/','DashboardController@awal')->name('dashboard.awal');
+
 Route::post('/search_dashboard','DashboardController@post_index')->name('post_index');
+Route::post('/search_dashboard/tag','DashboardController@index_search_tag')->name('search_by_tag_dashboard');
+Route::post('/get_pertanyaan','DashboardController@index_search_pertanyaan')->name('search_by_pertanyaan');
+Route::get('/view_pertanyaan/{id_pertanyaan}','DashboardController@index_dashboard_set')->name('search_by_view_pertanyaan');
+
+
+
+
 

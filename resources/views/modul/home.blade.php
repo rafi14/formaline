@@ -28,7 +28,7 @@
                     <ul type="square">
                         @foreach($matkul as $matkulku)
                         <li style="margin:10px 0;">
-                            <a href="{{ route('search_by_matkul_set') }}?text_search_matkul={{ Session::get('input_matkul')}}&index_matkul={{$matkulku->id}}" style="font-size:larger;">{{$matkulku->name}}</a>
+                            <a href="{{ route('search_by_matkul_set') }}?text_search_matkul={{ $matkulku->name }}&index_matkul={{$matkulku->id}}" style="font-size:larger;">{{$matkulku->name}}</a>
                         </li>
                         @endforeach
 
@@ -78,9 +78,9 @@
             <!-- Judul -->
             <div class="row">
                 <div class="col-8">
-                
+
                     @if ($question->count() && $isSearch == true )
-                    
+
                     <h3>
                         <img src="asset/img/icon/hastag.svg" aria-hidden="true" height="50" width="50">
 
@@ -136,11 +136,12 @@
                 </div>
                 <div class="col">
                     <div class="rowalign-items-start" style="text-align:right;">
-                        <sup>Rabu, 03 Juli 2019</sup>
+                        <!-- <sup>Rabu, 03 Juli 2019</sup> -->
+                        <sup>{{$questions->created_at->format('l, d m Y')}}</sup>
                     </div>
                     <div class="row align-items-end" style="text-align:right;">
                         Ditanyakan Oleh : <br>
-                        <a href="">Dheo Prasetyo</a>
+                        <a href="">{{$questions->user->name}}</a>
                     </div>
                 </div>
             </div>
@@ -152,7 +153,7 @@
             @endif
             <!-- End Post1 -->
 
-                <a href="{{route('home.index')}}">Kembali</a>
+            <a href="{{route('home.index')}}">Kembali</a>
 
             <!-- End Post3 -->
         </div>
@@ -177,13 +178,20 @@
                 </h5>
                 <hr>
                 <h6>
+                    @if($pertanyaan !== null)
+
                     <ul type="square">
                         @foreach($pertanyaan as $pertanyaans)
+                        @if ($pertanyaans->id_pertanyaan != null)
                         <li style="margin:10px 0; font-weight:normal;">
                             {{$pertanyaans->judul}} <sup>(3 Jawaban)</sup>
                             <br>
-                            <a href="" style="font-size:smaller;">{{$pertanyaans->name_matkul}}</a>
+
+                            <a href="{{route('question_index',$pertanyaans->id_pertanyaan)}}" style="font-size:smaller;">{{$pertanyaans->name_matkul}}</a>
+
                         </li>
+                       
+                        @endif
                         @endforeach
                         <!-- <li style="margin:10px 0; font-weight:normal;">
                             Perbedaan Join dan Subquery <sup>(5 Jawaban)</sup>
@@ -201,6 +209,7 @@
                             {{$pertanyaan->links()}}
                         </ul>
                     </div>
+                    @endif
                 </h6>
             </div>
             <div style="text-align:right;">

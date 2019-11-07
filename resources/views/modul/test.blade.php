@@ -10,10 +10,10 @@
                     Mata Kuliah
                 </h5>
                 <div>
-                    <form method="post" action="{{ route ('search_by_matkul_question') }}" class="search-wrap">
+                    <form method="post" action="{{ route ('search_by_matkul') }}" class="search-wrap">
                         @csrf
                         <div class="input-group w-100">
-                            <input name="text_search_matkul" type="text" class="form-control" style="width:40%;" placeholder="Cari Pertanyaan by Mata Kuliah">
+                            <input name="text_search_matkul" type="text" class="form-control" style="width:40%;" placeholder="Cari dasdsadas Pertanyaan by Mata Kuliah">
 
                             <div class="input-group-append">
                                 <button class="btn btn-primary" type="submit">
@@ -294,7 +294,7 @@
                         <li style="margin:10px 0; font-weight:normal;">
                             {{$r->judul}} <sup>(3 Jawaban)</sup>
                             <br>
-                            <a href="" style="font-size:smaller;">{{$r->name_matkul}}</a>
+                            <a href="{{route('question_index',$r->id_pertanyaan)}}" style="font-size:smaller;">{{$r->name_matkul}}</a>
                         </li>
                         @endforeach
                         <!-- <li style="margin:10px 0; font-weight:normal;">
@@ -310,7 +310,7 @@
                     </ul>
                     <div class="mt-3">
                         <ul class="pagination justify-content-end">
-                            {{-- $pertanyaan->links() --}}
+                            {{$question->links()}}
                         </ul>
                     </div>
                 </h6>

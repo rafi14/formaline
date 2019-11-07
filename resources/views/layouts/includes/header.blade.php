@@ -7,9 +7,10 @@
 				</div> <!-- brand-wrap.// -->
 			</div>
 			<div class="col-lg-6 col-sm-8">
-				<form action="#" class="search-wrap">
+			<form method="post" action="{{ route('post_index') }}" class="search-wrap">
+				@csrf
 					<div class="input-group w-100">
-						<input type="text" class="form-control" style="width:40%;" placeholder="Cari Pertanyaan by Universitas">
+						<input name="text_search_tag"  type="text" class="form-control" style="width:40%;" placeholder="Cari Pertanyaan by Universitas">
 					
 						<div class="input-group-append">
 							<button class="btn btn-primary" type="submit">
