@@ -112,7 +112,9 @@ class DashboardController extends Controller
         $input_text = $id_pertanyaan;
             
         $get_judul = Mypertanyaan::where('id', '=', $input_text )->first();
-        $pertanyaan = Mypertanyaan::where('tag', 'like', '%' . $get_judul->judul . '%')->paginate(6);
+        $pertanyaan = Mypertanyaan::where('judul', 'like', '%' . $get_judul->judul . '%')
+        ->join('matkul', 'pertanyaan.id_matkul', '=', 'matkul.id')
+        ->select('*', 'matkul.name as name_matkul','pertanyaan.id as id_pertanyaan')->paginate(4);
         $tag = Mypertanyaan::orderBy('created_at', 'desc')->limit(3)->get();
         $question = Mypertanyaan::where('judul', 'like', '%' . $get_judul->judul . '%')
             ->Orwhere('isi', 'like', '%' . $get_judul->judul . '%')
