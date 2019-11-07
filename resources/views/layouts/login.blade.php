@@ -91,12 +91,13 @@
             <div class="row justify-content-md-center h-100">
                 <div class="card-wrapper">
                     <div style="text-align:center;">
-                        <img src="http://localhost:8000/asset/img/logo/logo.png" alt="logo" width="120">
+                        <img src="asset/img/logo/logo.png" alt="logo" width="120">
                     </div>
                     <div class="card fat mt-5">
                         <div class="card-body">
                             <h4 class="card-title">Login</h4>
-                            <form method="POST" class="my-login-validation" novalidate="">
+                            <form method="post" class="my-login-validation" action="{{route('login.store')}}">
+                            @csrf
                                 <div class="form-group">
                                     <label for="email">E-Mail Address</label>
                                     <input id="email" type="email" class="form-control" name="email" value="" required autofocus>

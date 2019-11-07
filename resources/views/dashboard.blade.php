@@ -64,42 +64,7 @@
     <div class="row align-items-center">
         <div class="col-lg-3 col-sm-12 col-xs-12">
                 <div class="container-fluid">
-                        <div class="row">
-                            <div class="col-md-3">
-                                    <img src="http://localhost:8000/asset/img/icon/television.svg" height="50" width="50">
-                            </div>
-                            <div class="col-md-9">
-                                <p><font size="4"><b>Trending Channel</b></font></p>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <form class="form-inline">
-                                        <div class="input-group w-100">
-                                        <input type="text" class="form-control" id="inlineFormInputGroup" placeholder="Cari Channel" >
-                                        <div class="input-group-append"><button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button></div>
-                                        </div>
-                                </form>
-                            </div>
-                        </div>
-                        <br>
-                        <div class="row">
-                            <div class="col-md-12">
-                                {{-- <div class="list-group">
-                                    <a href="#" class="list-group-item list-group-item-action" >Teknik Infrormatika UG</a>
-                                    <a href="#" class="list-group-item list-group-item-action">Ilmu Komputer UI</a>
-                                    <a href="#" class="list-group-item list-group-item-action">STIE ITB</a>
-                                </div> --}}
-                                <ul class="" >
-                                        <li>Teknik Infrormatika UG</li>
-                                        <li>Ilmu Komputer UI</li>
-                                        <li>STIE ITB</li>
-                                    </ul>
-                                <a href="">Lihat Channel</a>
-                            </div>
-                        </div>
-                        <br>
+                        
                         <div class="row">
                             <div class="col-md-3">
                                 <i class="fa fa-2x fa-hashtag" aria-hidden="true"></i>
@@ -134,9 +99,10 @@
                         
         </div>
         <div class="col-lg-6 col-sm-12 col-xs-12">
-                <form action="#" class="search-wrap">
+                <form method="post" action="{{ route('post_index') }}" class="search-wrap">
+                    @csrf
                     <div class="input-group w-100">
-                        <input type="text" class="form-control" style="width:40%;" placeholder="Cari Pertanyaan">
+                        <input name="text_search_tag" type="text" class="form-control" style="width:40%;" placeholder="Cari Pertanyaan">
                     
                         <div class="input-group-append">
                         <!--button class="btn btn-primary" type="submit">
@@ -161,7 +127,7 @@
             <div class="container-fluid">
                         <div class="row">
                             <div class="col-md-3">
-                                    <img src="http://localhost:8000/asset/img/icon/graduate-student-avatar.svg" height="50" width="50">
+                                    <img src="asset/img/icon/graduate-student-avatar.svg" height="50" width="50">
                             </div>
                             <div class="col-md-9">
                                 <p><font size="4"><b>Mahasiswa of The Month</b></font></p>
@@ -171,7 +137,7 @@
                         <div class="container">
                                 <div class="row">
                                 <div class="col-md-3">
-                                        <img src="http://localhost:8000/asset/img/icon/gold-medal.svg" height="35" width="35">
+                                        <img src="asset/img/icon/gold-medal.svg" height="35" width="35">
                                 </div>
                                 <div class="col-md-9">
                                     <div class="row">
@@ -193,7 +159,7 @@
                                 </div>
                                 <div class="row">
                                         <div class="col-md-3">
-                                            <img src="http://localhost:8000/asset/img/icon/gold-medal.svg" height="35" width="35">
+                                            <img src="asset/img/icon/gold-medal.svg" height="35" width="35">
                                         </div>
                                         <div class="col-md-9">
                                         <div class="row">
@@ -215,7 +181,7 @@
                                 </div>
                                 <div class="row">
                                         <div class="col-md-3">
-                                            <img src="http://localhost:8000/asset/img/icon/gold-medal.svg" height="35" width="35">
+                                            <img src="asset/img/icon/gold-medal.svg" height="35" width="35">
                                         </div>
                                         <div class="col-md-9">
                                         <div class="row">
@@ -238,7 +204,7 @@
                             </div>
                         <div class="row">
                                 <div class="col-md-3">
-                                        <img src="http://localhost:8000/asset/img/icon/form.svg" height="50" width="50">
+                                        <img src="asset/img/icon/form.svg" height="50" width="50">
                                 </div>
                                 <div class="col-md-9">
                                     <p><font size="4"><b>Pertanyaan Popular</b></font></p>

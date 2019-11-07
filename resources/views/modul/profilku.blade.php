@@ -28,7 +28,7 @@
 <div class="row align-items-center">
     <div class="col-lg-3 col-sm-4">
     <div class="brand-wrap">
-        <img  class="logo" src="http://localhost:8000/asset/img/logo/banner.png">
+        <img  class="logo" src="asset/img/logo/banner.png">
 		
     </div> <!-- brand-wrap.// -->
     </div>
@@ -68,7 +68,7 @@
         <div class="row">
             <div class="col-lg-4 d-none d-lg-block">
                 <h5>
-                    <img src="http://localhost:8000/asset/img/icon/television.svg" aria-hidden="true" height="50" width="50">
+                    <img src="asset/img/icon/television.svg" aria-hidden="true" height="50" width="50">
                     Channel Ku
                 </h5>
                 <div>
@@ -114,7 +114,7 @@
             <div class="col-lg-5 col-sm-12 col-xs-12">
                     <div class="row">
                         <div>
-                            <img  style="margin-right:10px;" src="http://localhost:8000/asset/img/icon/graduate.svg" alt="">
+                            <img  style="margin-right:10px;" src="asset/img/icon/graduate.svg" alt="">
                         </div>
                         <div>
                             <h4 class="font-weight-bold">Profil Ku</h4> 
@@ -123,7 +123,7 @@
                         </div>
                     </div>
                         <div class="text-center d-lg-none">
-                        <img height="200px" width="auto" class=" ml-5 mt-4" src="http://localhost:8000/asset/img/foto/guruhformal.jpg" alt="">
+                        <img height="200px" width="auto" class=" ml-5 mt-4" src="asset/img/foto/guruhformal.jpg" alt="">
                         </div>
                     <!-- Pencapaianku -->
                     <h4 class="mt-5">Pencapaian Ku</h4>
@@ -218,27 +218,27 @@
             </div>
             <div class="col-lg-3 col-sm-12 col-xs-12">
 
-            <img height="120px" width="auto" class="rounded-circle ml-5 mt-2 d-none d-lg-block " src="http://localhost:8000/asset/img/foto/guruhformal.jpg" alt="">
+            <img height="120px" width="auto" class="rounded-circle ml-5 mt-2 d-none d-lg-block " src="asset/img/foto/guruhformal.jpg" alt="">
             <br>
             <button type="button" class="btn btn-primary mt-4 ml-5 d-none d-lg-block">Ubah Foto <i class="fas fa-camera"></i></button>
              
             <h4 class="mt-5">Badge Ku <sup style="color:DeepSkyBlue">4</sup> </h4>
                         <div style="border-style: groove; " class="text-secondary" >
                             <a  href="buzz.html" title="100 kali pencarian">
-<img class="ml-4" height="50px" width="auto" src="http://localhost:8000/asset/img/icon/keker.png" alt=""> </a>
+<img class="ml-4" height="50px" width="auto" src="asset/img/icon/keker.png" alt=""> </a>
 <a  href="buzz.html" title="100 kali disukai">
-<img class="ml-4" height="40px" width="auto" src="http://localhost:8000/asset/img/icon/love.png" alt=""> </a>
+<img class="ml-4" height="40px" width="auto" src="asset/img/icon/love.png" alt=""> </a>
 <a  href="buzz.html" title="100 orang merekomendasikan">
-<img class="ml-4 " height="40px" width="auto" src="http://localhost:8000/asset/img/icon/like.png" alt=""> </a>
-                                <a  href="buzz.html" title="100 kali menjawab"> <img class="ml-4 mt-2" height="50px" width="auto" src="http://localhost:8000/asset/img/icon/medal3.png" alt=""> </a>
+<img class="ml-4 " height="40px" width="auto" src="asset/img/icon/like.png" alt=""> </a>
+                                <a  href="buzz.html" title="100 kali menjawab"> <img class="ml-4 mt-2" height="50px" width="auto" src="asset/img/icon/medal3.png" alt=""> </a>
                         </div>
             <h4 class="mt-5">Teman Ku <sup style="color:DeepSkyBlue">24</sup> </h4>
                         <div style="border-style: groove; " class="text-secondary" >
-                            <img height="60px" width="60px" class="rounded-circle ml-3 mt-2 mb-2" class="ml-3"  src="http://localhost:8000/asset/img/foto/fariz2.PNG" alt="">
-                                <img height="60px" width="60px" class="rounded-circle ml-2 mt-2 mb-2" class="ml-3"  src="http://localhost:8000/asset/img/foto/raf.PNG" alt="">
-                                <img height="60px" width="60px" class="rounded-circle ml-2 mt-2 mb-2" class="ml-3"  src="http://localhost:8000/asset/img/foto/dheo2.jpg" alt="">
-                                <img height="60px" width="60px" class="rounded-circle ml-3 mt-2 mb-2" class="ml-3"  src="http://localhost:8000/asset/img/foto/naila.PNG" alt="">
-                                <img height="60px" width="60px" class="rounded-circle ml-2 mt-2 mb-2" class="ml-3"  src="http://localhost:8000/asset/img/foto/rahel.PNG" alt="">
+                            <img height="60px" width="60px" class="rounded-circle ml-3 mt-2 mb-2" class="ml-3"  src="asset/img/foto/fariz2.PNG" alt="">
+                                <img height="60px" width="60px" class="rounded-circle ml-2 mt-2 mb-2" class="ml-3"  src="asset/img/foto/raf.PNG" alt="">
+                                <img height="60px" width="60px" class="rounded-circle ml-2 mt-2 mb-2" class="ml-3"  src="asset/img/foto/dheo2.jpg" alt="">
+                                <img height="60px" width="60px" class="rounded-circle ml-3 mt-2 mb-2" class="ml-3"  src="asset/img/foto/naila.PNG" alt="">
+                                <img height="60px" width="60px" class="rounded-circle ml-2 mt-2 mb-2" class="ml-3"  src="asset/img/foto/rahel.PNG" alt="">
                         </div>  
                     <button onclick="mywholepage()" style="" id = "print" type="button" class="btn btn-info mr-5 ml-5 mt-5 d-none d-lg-block ">Cetak Portofolio</button>   
                         <div id="foo" class="mt-5">

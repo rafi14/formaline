@@ -9,46 +9,29 @@
                     <h3>Kelola Mata Kuliah</h3>
                 </div>
             </div>
-            <form action="">
+            <form action="{{route('matkul.store')}}" method="post">
+                @csrf
                 <div class="row mt-4">
                     <div class="col">
                         <div class="form-group">
                             <label for="" style="font-weight:bold;">Nama</label>
-                            <input type="text" class="form-control" id="nama" aria-describedby="namaHelp" value="S1 Agroteknologi Gunadarma">
+                            <input type="text" class="form-control" id="nama" aria-describedby="namaHelp" value="" name="name">
                         </div>
-                        <button type="button" class="btn btn-primary" style="float:right; width:25%;">Tambahkan</button>      
+                        <button type="submit" class="btn btn-primary" style="float:right; width:25%;">Tambahkan</button>      
                     </div>
                 </div>
             </form>
             <div class="row mt-2">
                 <h3>
+                   @foreach($matkul as $matkuls) 
                     <ul>
                         <li style="margin:20px 0;">
-                            <a href="">Sistem Informasi Akuntansi</a><br>
+                            <a href="">{{$matkuls->name}}</a><br>
                             <!--small><a data-toggle="modal" href="#editMk1">Edit</a>&nbsp;<a href=""></a></small-->
                             <small><a href="/edit-matkul/sis-infor-akun">Edit</a>&nbsp;<a href=""></a></small>
-                    </li>
-                        <li style="margin:20px 0;">
-                            <a href="">Algoritma Pemrograman Parallel</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
-                        </li>
-                        <li style="margin:20px 0;">
-                            <a href="">Peng. Teknologi Game</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
-                        </li>
-                        <li style="margin:20px 0;">
-                            <a href="">Sistem Informasi Manajemen</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
-                        </li>
-                        <li style="margin:20px 0;">
-                            <a href="">Peng. Analisis Algoritma</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
-                        </li>
-                        <li style="margin:20px 0;">
-                            <a href="">Bahasa Inggris Bisnis 1</a><br>
-                            <small><a href="">Edit</a>&nbsp;<a href=""></a></small>
-                        </li>
+                         </li>
                     </ul>
+                   @endforeach 
                 </h3>
             </div>
             <div class="mt-3">

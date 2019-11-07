@@ -2,37 +2,23 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <!-- Channel & Mata Kuliah -->
+        <!-- Mata Kuliah -->
         <div class="col">
-            <div>
-                <h5>
-                    <img src="asset/img/icon/television.svg" aria-hidden="true" height="30">
-                    Teknik Informatika UG 
-                    
-                </h5>
-                <h6>
-                    <ul type="none">
-                        <li style="margin:-10px 0;">
-                            <img src="asset/img/icon/college-graduation.svg" aria-hidden="true" height="30"> Rekayasa Komputasional
-                        </li>
-                    </ul>
-                </h6>
-            </div>
-        
-            <div class="mt-5">
+            <div class="row">
                 <h5>
                     <img src="asset/img/icon/college-graduation.svg" aria-hidden="true" height="50" width="50">
                     Mata Kuliah
                 </h5>
                 <div>
-                    <form action="#" class="search-wrap">
+                    <form method="post" action="{{ route ('search_by_matkul_question') }}" class="search-wrap">
+                        @csrf
                         <div class="input-group w-100">
-                            <input type="text" class="form-control" style="width:40%;" placeholder="Cari Channel">
-            
+                            <input name="text_search_matkul" type="text" class="form-control" style="width:40%;" placeholder="Cari Pertanyaan by Mata Kuliah">
+
                             <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
                             </div>
                         </div>
                     </form> <!-- search-wrap .end// -->
@@ -40,50 +26,37 @@
                 <hr>
                 <h6>
                     <ul type="square">
+                        @foreach($matkul as $matkulku)
                         <li style="margin:10px 0;">
-                            <a href="" style="font-size:larger;">Sistem Keamanan Komputer</a>
+                            <a href="{{ route('search_by_matkul_set_question') }}?text_search_matkul={{ Session::get('input_matkul')}}&index_matkul={{$matkulku->id}}" style="font-size:larger;">{{$matkulku->name}}</a>
                         </li>
-                        <li style="margin:10px 0; font-weight:normal;">
-                            <a href="" style="font-size:larger;">Sistem Basis Data 2</a>
-                        </li>
-                        <li style="margin:10px 0; font-weight:normal;">
-                            <a href="" style="font-size:larger;">Algoritma Pemrograman Parallel</a>
-                        </li>
-                    </ul>
+                        @endforeach
 
+
+                    </ul>
                     <div class="mt-3">
-                        <a href="/create-matkul">Kelola Mata Kuliah (Admin)</a>
+                        <a href="{{route('matkul.index')}}">Kelola Mata Kuliah (Admin)</a>
                     </div>
                     <div class="mt-3">
-                        <ul class="pagination justify-content-end">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1">Previous</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
-                            </li>
-                        </ul>
+                        {{$matkul->links()}}
                     </div>
                 </h6>
             </div>
-
             <div class="row mt-5">
                 <h5>
                     <img src="asset/img/icon/hastag.svg" aria-hidden="true" height="50" width="50">
                     Tag Popular
                 </h5>
                 <div>
-                    <form action="#" class="search-wrap">
+                    <form action="{{ route('search_by_tag_question') }}" method="post" class="search-wrap">
+                        @csrf
                         <div class="input-group w-100">
-                            <input type="text" class="form-control" style="width:40%;" placeholder="Cari Tag">
-            
+                            <input name="text_search_tag" type="text" class="form-control" style="width:40%;" placeholder="Cari Tag">
+
                             <div class="input-group-append">
-                            <button class="btn btn-primary" type="submit">
-                                <i class="fa fa-search"></i>
-                            </button>
+                                <button class="btn btn-primary" type="submit">
+                                    <i class="fa fa-search"></i>
+                                </button>
                             </div>
                         </div>
                     </form> <!-- search-wrap .end// -->
@@ -92,20 +65,49 @@
                 {{-- <br> --}}
                 <div class="row mt-2">
                     <div class="col-md-12">
-                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >UG</span>
-                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >Teknik</span>
-                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >Fakultas Teknologi Industri</span>
-                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >HTML</span>
-                            <span class="btn btn-primary btn-sm" style="margin:2px 0;" >Pengantar Web</span>
+                        @foreach($tag as $tags)
+                        <a href="{{ route('search_by_tag_get_question')}}?text_search_tag={{$tags->tag}}"><span class="btn btn-primary btn-sm" style="margin:2px 0;">{{$tags->tag}}</span></a>
+                        @endforeach
                     </div>
                 </div>
             </div>
-
-            <a class="btn btn-primary mt-5" href="/home" role="button" style="text-align:center;width:70%;">Kembali</a>
         </div>
 
         <!-- Kumpulan Pertanyaan di Mata Kuliah -->
         <div class="col-6">
+            <!-- Judul -->
+            <div class="row">
+                <div class="col-8">
+                
+                    @if ($question->count() && $isSearch == true )
+                    
+                    <h3>
+                        <img src="asset/img/icon/hastag.svg" aria-hidden="true" height="50" width="50">
+
+                        Browse Tag : {{$question[0]->tag}}
+
+                    </h3>
+                    @endif
+                </div>
+                <div class="col-4">
+                    <div class="dropdown" style="text-align:right;">
+                        <h6 style="font-weight:normal;">Urutkan Dari :</h6>
+                        <select class="form-control" id="exampleFormControlSelect1">
+                            <option selected>Jumlah Dilihat</option>
+                            <option>Paling Baru</option>
+                            <option>Jumlah Jawaban</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+
+            <hr>
+            <!-- End Judul -->
+
+            <!-- Post1 -->
+        
+            <div class="col-6">
             <!-- Judul -->
                 <div class="row">
                     <div class="col align-items-center" style="text-align:center;">
@@ -115,7 +117,7 @@
                     <div class="col-6">
                         <div class="row">
                             <h4>
-                                DVWA gak bisa diinstall di linux
+                                {{$pertanyaan[0]->judul}}
                             </h4>
                         </div>
                         <div class="row">
@@ -259,15 +261,25 @@
                 <hr>
             <!-- End Jawaban2 -->
         </div>
+           
+            <!-- End Post1 -->
+
+                <a href="{{route('home.index')}}">Kembali</a>
+
+            <!-- End Post3 -->
+        </div>
 
         <!-- Profil & Pertanyaan-->
         <div class="col">
             <div class="row" style="text-align:start;">
                 <div class="col-3">
-                        <img src="asset/img/foto/guruhformal.jpg" aria-hidden="true" height="50" width="50" style="border-radius:50%;">
+                    <img src="asset/img/foto/guruhformal.jpg" aria-hidden="true" height="50" width="50" style="border-radius:50%;">
                 </div>
                 <div class="col">
-                    <a href="/profilku"><h5>M Guruh Ajinugroho</h5><div style="font-size:smaller;">Lihat Profil</div></a>
+                    <a href="/profilku">
+                        <h5>M Guruh Ajinugroho</h5>
+                        <div style="font-size:smaller;">Lihat Profil</div>
+                    </a>
                 </div>
             </div>
             <div class="mt-5">
@@ -278,12 +290,14 @@
                 <hr>
                 <h6>
                     <ul type="square">
+                        @foreach($question as $r)
                         <li style="margin:10px 0; font-weight:normal;">
-                            Tanya Rumus Regresi <sup>(3 Jawaban)</sup>
+                            {{$r->judul}} <sup>(3 Jawaban)</sup>
                             <br>
-                            <a href="" style="font-size:smaller;">Rekayasa Komputasional</a>
+                            <a href="" style="font-size:smaller;">{{$r->name_matkul}}</a>
                         </li>
-                        <li style="margin:10px 0; font-weight:normal;">
+                        @endforeach
+                        <!-- <li style="margin:10px 0; font-weight:normal;">
                             Perbedaan Join dan Subquery <sup>(5 Jawaban)</sup>
                             <br>
                             <a href="" style="font-size:smaller;">Sistem Basis Data 2</a>
@@ -292,25 +306,17 @@
                             Storing data xss-reflected <sup>(1 Jawaban)</sup>
                             <br>
                             <a href="" style="font-size:smaller;">Sistem Keamanan Komputer</a>
-                        </li>
+                        </li> -->
                     </ul>
                     <div class="mt-3">
                         <ul class="pagination justify-content-end">
-                            <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1">Previous</a>
-                            </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item"><a class="page-link" href="#">2</a></li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                            <a class="page-link" href="#">Next</a>
-                            </li>
+                            {{-- $pertanyaan->links() --}}
                         </ul>
                     </div>
                 </h6>
             </div>
             <div style="text-align:right;">
-                <a class="btn btn-primary" href="/new-post" role="button">Ajukan Pertanyaan</a>
+                <a class="btn btn-primary" href="{{route('pertanyaan.index')}}" role="button">Ajukan Pertanyaan</a>
             </div>
         </div>
     </div>

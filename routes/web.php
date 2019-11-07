@@ -11,21 +11,19 @@
 |
 */
 
-Route::get('/', function () {
-    return view('dashboard');
-});
 
-Route::get('/home', function () {
-    return view('modul.home');
-});
 
-Route::get('/question/dvwa-gabisa-di-linux', function () {
-    return view('modul.question');
-});
+// Route::get('/home', function () {
+//     return view('modul.home');
+// });
 
-Route::get('/new-post',function(){
-    return view('modul.post');
-});
+// Route::get('/question/dvwa-gabisa-di-linux', function () {
+//     return view('modul.question');
+// });
+
+// Route::get('/new-post',function(){
+//     return view('modul.post');
+// });
 
 /*Route::get('/browse-channel',function(){
     return view('modul.browse_channel');
@@ -36,22 +34,40 @@ Route::get('/create-channel',function(){
 });
 */
 
-Route::get('/create-matkul',function(){
-    return view('modul.create_matkul');
-});
+// Route::get('/create-matkul',function(){
+//     return view('modul.create_matkul');
+// });
 
 Route::get('/profilku', function () {
     return view('modul.profilku');
 });
 
-Route::get('/login', function () {
-    return view('layouts.login');
-});
 
-Route::get('/register', function () {
-    return view('layouts.register');
-});
 
 Route::get('browse-tag',function(){
     return view('modul.browse_tag');
 });
+
+
+
+Route::resource('/login', 'LoginController');
+Route::resource('/daftar', 'DaftarController');
+Route::resource('/pertanyaan', 'PertanyaanController');
+Route::resource('/matkul', 'MatkulController');
+Route::resource('/home', 'HomeController');
+Route::get('/get_tag','HomeController@index_search_tag')->name('search_by_tag_get');
+Route::post('/pertanyaan/tag','HomeController@index_search_tag')->name('search_by_tag');
+Route::post('/get_matkul','HomeController@index_search_matkul')->name('search_by_matkul');
+Route::get('/set_matkul','HomeController@index_set_matkul')->name('search_by_matkul_set');
+
+Route::get('/get_tag/question','QuestionController@index_search_tag')->name('search_by_tag_get_question');
+Route::post('/pertanyaan/tag/question','QuestionController@index_search_tag')->name('search_by_tag_question');
+Route::post('/get_matkul/question','QuestionController@index_search_matkul')->name('search_by_matkul_question');
+Route::get('/set_matkul/question','QuestionController@index_set_matkul')->name('search_by_matkul_set_question');
+
+Route::get('/question/{id}','QuestionController@index')->name('question_index');
+Route::resource('/question','QuestionController');
+
+Route::resource('/dashboard','DashboardController');
+Route::post('/search_dashboard','DashboardController@post_index')->name('post_index');
+
